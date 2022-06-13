@@ -21,3 +21,4 @@ npm install react-router-dom@6
 npm install redux react-redux
 npm install redux-thunk
 npm install --save redux-devtools-extension
+npm install axios
