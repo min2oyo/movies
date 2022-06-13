@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
-import { useDispatch } from 'react-redux/es/exports';
+import { useDispatch, useSelector } from 'react-redux/es/exports';
+import Banner from '../components/Banner';
 import { movieAction } from '../redux/action/movieAction';
 
 const Home = () => {
 
   const dispatch = useDispatch();
+  const { popularMovies, topRatedMovies, upComingMovies } = useSelector(state => state.movie);
 
   useEffect(() => {
     dispatch(movieAction.getMovies());
@@ -13,7 +14,10 @@ const Home = () => {
   }, []);
 
   return (
-    <div>Home</div>
+    <>
+      {/* <Banner /> */}
+      {popularMovies && <Banner movie={popularMovies.results[0]} />}
+    </>
   );
 };
 
