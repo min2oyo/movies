@@ -22,3 +22,4 @@ npm install redux react-redux
 npm install redux-thunk
 npm install --save redux-devtools-extension
 npm install axios
+npm install react-multi-carousel --save
