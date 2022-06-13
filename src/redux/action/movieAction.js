@@ -12,6 +12,11 @@ function getMovies() {
     console.log(popularMovies);
     console.log(topRateMovies);
     console.log(upComingMovies);
+
+    dispatch({
+      type: `GET_MOVIES_SUCCESS`,
+      payload: { popularMovies: popularMovies.data, topRateMovies: topRateMovies.data, upComingMovies: upComingMovies.data }
+    });
   };
 };
 
