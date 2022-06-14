@@ -1,7 +1,12 @@
 import React from 'react';
 import { Badge } from 'react-bootstrap';
+import { useSelector } from 'react-redux';
 
 const MovieCard = ({ item }) => {
+
+  const { genreList } = useSelector(state => state.movie);
+  console.log(`genreList[28]`, genreList[28]);
+
   return (
     <>
       <div
@@ -13,7 +18,7 @@ const MovieCard = ({ item }) => {
           <h1>{item.title}</h1>
           <div>
             {item.genre_ids.map(id =>
-              <Badge bg="danger">{id}</Badge>
+              <Badge bg="danger">{genreList.find(item => item.id === id).name}</Badge>
             )}
           </div>
           <div>
